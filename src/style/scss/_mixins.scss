@@ -1,0 +1,14 @@
+@use "var" as *;
+
+
+@mixin tablet-down {
+  @media (max-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin laptop-down {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
