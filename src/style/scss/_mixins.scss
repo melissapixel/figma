@@ -8,6 +8,12 @@
 }
 
 @mixin laptop-down {
+  @media (max-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
   @media (max-width: 1440px) {
     @content;
   }
