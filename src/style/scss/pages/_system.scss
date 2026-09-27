@@ -1,0 +1,30 @@
+@use "../var" as *;
+@use "../mixins" as *;
+
+
+.system {
+  .container {
+    .content {
+      .cards {
+        .card--first {
+          flex: 3;
+        }
+        .card--second {
+          flex: 1.5;
+        }
+      }
+    }
+  }
+}
+
+@include laptop-down {
+  .system {
+    .container {
+      .content {
+        .cards {
+          flex-direction: column; 
+        }
+      }
+    }
+  }
+}
