@@ -1,0 +1,50 @@
+@use "../var" as *;
+@use "../mixins" as *;
+
+
+.possibilities {
+  margin-bottom: 2.5rem;
+  .container {
+    .content {
+
+     .cards {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      
+      .card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .card__text {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+        .card__active {
+          a {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+          }
+        }
+      }
+     }
+    }
+  }
+}
+
+
+@include tablet-down {
+  .possibilities {
+    .container {
+      .content {
+        .cards {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
