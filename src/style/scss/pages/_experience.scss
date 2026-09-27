@@ -1,0 +1,46 @@
+@use "../var" as *;
+@use "../mixins" as *;
+
+
+.experience {
+  margin-bottom: 2.5rem;
+  .container {
+    .content {
+
+      .experience__list {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 20px;
+        .card {
+          display: flex;
+          gap: 12px;
+          flex-direction: column;
+          .card__text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+          }
+        }
+        .card--big {
+          flex: 3;
+        }
+        .card--mini {
+          flex: 1.5;
+        }
+      }
+    }
+  }
+}
+
+
+@include tablet-down {
+  .experience {
+    .container {
+      .content {
+        .experience__list {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
