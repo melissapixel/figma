@@ -1,0 +1,106 @@
+@use "../var" as *;
+@use "../mixins" as *;
+
+
+.main {
+  .container {
+
+    .main__header {
+      margin-bottom: 2.5rem;
+      .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        .header__left {
+          display: flex;
+          gap: 5px;
+        }
+      }
+    }
+
+    .main__footer {
+      .container {
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .footer__list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: clamp(2rem, calc(1rem + 1vw), 3rem);
+            padding-block: 2rem 1rem;
+            white-space: nowrap;
+            overflow-x: auto;
+
+            color: $muted;
+
+            .active {
+              color: black;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+            }
+          }
+          .footer__desc {
+            margin: 0 auto;
+            max-width: 560px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@include desktop-down {
+  .main {
+    .container {
+
+      .main__header {
+        .content {
+          flex-direction: column;
+          align-items: start;
+          gap: 50px;
+        }
+      }
+    }
+  }
+}
+
+@include laptop-down {
+  .main {
+    .container {
+      .main__body {
+        .content {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include tablet-down {
+  .main {
+    .container {
+
+      .main__header {
+        .content {
+          .header__left {
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            a {
+              span {
+                width: 100%;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
