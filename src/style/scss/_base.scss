@@ -101,6 +101,9 @@ img {
   border-radius: 50%;
   display: inline;
 }
+.logo-svg {
+  width: 15px;
+}
 
 
 
@@ -118,7 +121,7 @@ img {
     .card__text {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 6px;
     }
   }
 }
