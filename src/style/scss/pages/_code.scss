@@ -1,0 +1,37 @@
+@use "../var" as *;
+@use "../mixins" as *;
+
+
+.code {
+  .container {
+    .content {
+      .title {
+        margin: 0 auto;
+      }
+      .bg {
+        margin-top: clamp(2rem, calc(1rem + 1vw), 2.5rem);
+      }
+      .cards {
+        .card {
+          a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet-down {
+  .code {
+    .container {
+      .content {
+        .cards {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
