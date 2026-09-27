@@ -1,0 +1,71 @@
+@use "../var" as *;
+@use "../mixins" as *;
+
+
+.header {
+  border: 1px solid $muted;
+  .container{
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .wrapper {
+        display: flex;
+        align-items: center;
+        .wrapper__logo {
+          margin-right: clamp(1rem, calc(1rem + 1vw), 1.5rem);;
+          img {
+            height: 1.75rem;
+            width: 1.1875rem;
+          }
+        }
+        .wrapper__list {
+          ul {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+
+      .wrapper__active {
+        display: flex;
+        gap: 7px;
+      }
+    }
+  }
+}
+
+
+@include laptop-down {
+  .header {
+    .container {
+      .content {
+
+        .wrapper {
+          .wrapper__logo {
+            img {
+              height: 48px;
+              width: 32px;
+            }
+          }
+          .wrapper__list {
+            display: none;
+          }
+        }
+
+        .wrapper__active {
+          .log, .contact {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
