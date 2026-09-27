@@ -103,9 +103,31 @@ img {
 }
 
 
+
+.cards {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  
+  .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .card__text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+  }
+}
+
+
 .container {
   padding-top: clamp(0.5rem, calc(1rem + 1vw), 2rem);
   padding-bottom: clamp(0.5rem, calc(1rem + 1vw), 2rem);
+  margin-bottom: 2.5rem;
 }
 .content {
   width: min(calc(100vw - 1rem * 2 - 0rem), 95rem);
