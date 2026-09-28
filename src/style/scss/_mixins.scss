@@ -1,5 +1,10 @@
 @use "var" as *;
 
+@mixin phone-down {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
 
 @mixin tablet-down {
   @media (max-width: 1025px) {
