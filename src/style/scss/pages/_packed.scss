@@ -1,0 +1,101 @@
+@use "../var" as *;
+@use "../mixins" as *;
+
+
+.packed {
+  .container {
+    .content {
+
+      .title {
+        padding-bottom: clamp(2rem, calc(1rem + 1vw), 5rem);
+      }
+
+      .packed__list {
+        display: flex;
+        flex-direction: column;
+
+        .card {
+          display: grid;
+          grid-template-columns: 1fr 1fr 2fr;
+          grid-template-rows: auto 1fr;
+          align-items: start;
+          column-gap: 1rem;
+          row-gap: 1rem;
+          padding: 1.5rem 0rem;
+
+          .card__title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            .tag {
+              background: $blue;
+            }
+          }
+
+          .card__text {
+            display: flex;
+            .text {
+              flex: 1;
+            }
+            .card__active {
+              display: flex;
+              flex-direction: column;
+              align-items: end;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include tablet-down {
+  .packed {
+    .container {
+      .content {
+
+        .packed__list {
+          gap: 30px;
+          .card {
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: repeat(3, 70px);
+
+            .card__title {
+              grid-row: 1 / 1;
+            }
+            .card__text {
+              flex-direction: column;
+              align-items: start;
+              gap: 12px;
+
+              .card__active {
+                gap: 3px;
+                align-items: start;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@include phone-down {
+  .packed {
+    .container {
+      .content {
+
+        .packed__list {
+
+          .card {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
